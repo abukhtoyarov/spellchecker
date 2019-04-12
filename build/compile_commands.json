@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/abu/proj/spellchecker/build",
+  "command": "/usr/bin/clang++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk   -std=c++17 -Wall -Wextra -Werror -Wno-unused-variable -o CMakeFiles/spellchecker.dir/src/main.cpp.o -c /Users/abu/proj/spellchecker/src/main.cpp",
+  "file": "/Users/abu/proj/spellchecker/src/main.cpp"
+}
+]

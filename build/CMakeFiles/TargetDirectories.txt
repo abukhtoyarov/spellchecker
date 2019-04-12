@@ -1,0 +1,3 @@
+/Users/abu/proj/spellchecker/build/CMakeFiles/rebuild_cache.dir
+/Users/abu/proj/spellchecker/build/CMakeFiles/edit_cache.dir
+/Users/abu/proj/spellchecker/build/CMakeFiles/spellchecker.dir
