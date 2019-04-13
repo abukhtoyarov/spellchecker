@@ -18,6 +18,7 @@ find_package(GTest REQUIRED)
 find_package(Threads REQUIRED)
 add_executable(runUnitTests
     test/distance_test.cpp
+    test/bktree_test.cpp
     )
 
 target_compile_options(runUnitTests PUBLIC 
