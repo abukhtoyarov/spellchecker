@@ -1,12 +1,32 @@
 #pragma once 
 #include <string>
 #include <vector>
+//
+// вместо дополнительного заголовка, будет лежать пока что здесь.
+//
 
+// преобразование строки к нижнему регистру
 inline std::string to_lower(const std::string &str) {
     auto ret = str;
     std::transform(str.begin(), str.end(), ret.begin(), [] (unsigned char c) { return std::tolower(c); });
     return ret;
 }
+
+// trim from end of string (right)
+template<class CharT> inline std::basic_string<CharT> &rtrim(std::basic_string<CharT> &s, const CharT *delims) {
+    s.erase(s.find_last_not_of(delims) + 1);
+    return s;
+}
+
+// trim from beginning of string (left)
+template<class CharT> inline std::basic_string<CharT> &ltrim(std::basic_string<CharT> &s, const CharT *delims) {
+    s.erase(0, s.find_first_not_of(delims));
+    return s;
+}
+
+// trim from both ends of string (right then left)
+template<class CharT> inline std::basic_string<CharT> &trim(std::basic_string<CharT> &s, const char *delims) { return ltrim(rtrim(s, delims), delims); }
+
 namespace levenshtein {
 
 // Levenshtein distance - Wagner–Fischer algorithm

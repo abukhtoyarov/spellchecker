@@ -19,7 +19,12 @@ template<class CharT> struct Node {
             result.emplace_back(d, word_);
         }
 
+        auto left = d - dist ? d - dist : 1;
+        auto right = d + dist;
+        
         for(const auto &n: children_) {
+            if(left > n.first || right < n.first)
+                continue;
             n.second.template lookup<DistanceAlg>(word, dist, result);
         }
     }
