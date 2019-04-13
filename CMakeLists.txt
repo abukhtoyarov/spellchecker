@@ -25,9 +25,6 @@ add_executable(runUnitTests
 target_compile_options(runUnitTests PUBLIC 
     $<$<COMPILE_LANGUAGE:CXX>:-std=c++17>
     $<$<COMPILE_LANGUAGE:CXX>:-Wall>
-    $<$<COMPILE_LANGUAGE:CXX>:-Wextra>
-    $<$<COMPILE_LANGUAGE:CXX>:-Werror>
-    $<$<COMPILE_LANGUAGE:CXX>:-Wno-unused-variable>
     )
 
 target_include_directories(runUnitTests PUBLIC ${GTEST_INCLUDE_DIRS})
