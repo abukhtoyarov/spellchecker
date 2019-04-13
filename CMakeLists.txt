@@ -16,7 +16,9 @@ target_compile_options(${APP_NAME} PUBLIC
 enable_testing()
 find_package(GTest REQUIRED)
 find_package(Threads REQUIRED)
-add_executable(runUnitTests test/main.cpp)
+add_executable(runUnitTests
+    test/distance_test.cpp
+    )
 
 target_compile_options(runUnitTests PUBLIC 
     $<$<COMPILE_LANGUAGE:CXX>:-std=c++17>
