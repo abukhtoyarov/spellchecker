@@ -46,14 +46,20 @@ struct Distance {
 } 
 
 template<typename CharT, typename DistanceAlg> inline int distance(const CharT *l, const CharT *r) { 
+    if(!l || !r)
+        throw std::runtime_error("bad param");
     return DistanceAlg()(std::basic_string<CharT>(l), std::basic_string<CharT>(r)); 
 }
 
 template<typename CharT, typename DistanceAlg> inline int distance(const CharT *l, const std::basic_string<CharT> &r) { 
+    if(!l)
+        throw std::runtime_error("bad param");
     return DistanceAlg()(std::basic_string<CharT>(l), r); 
 }
 
 template<typename CharT, typename DistanceAlg> inline int distance(const std::basic_string<CharT> &l, const CharT *r) { 
+    if(!r)
+        throw std::runtime_error("bad param");
     return DistanceAlg()(l, std::basic_string<CharT>(r)); 
 }
 
