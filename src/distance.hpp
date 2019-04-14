@@ -5,10 +5,19 @@
 // вместо дополнительного заголовка, будет лежать пока что здесь.
 //
 
+
+namespace details {
+
+template<class CharT> int tolower(int c);
+template<> int tolower<char>(int c) { return std::tolower(c); }
+template<> int tolower<wchar_t>(int c) { return std::towlower(c); }
+
+}
+
 // преобразование строки к нижнему регистру
-inline std::string to_lower(const std::string &str) {
+template<class CharT> inline std::basic_string<CharT> to_lower(const std::basic_string<CharT> &str) {
     auto ret = str;
-    std::transform(str.begin(), str.end(), ret.begin(), [] (unsigned char c) { return std::tolower(c); });
+    std::transform(str.begin(), str.end(), ret.begin(), [] (CharT c) { return details::tolower<CharT>(c); });
     return ret;
 }
 
@@ -25,7 +34,7 @@ template<class CharT> inline std::basic_string<CharT> &ltrim(std::basic_string<C
 }
 
 // trim from both ends of string (right then left)
-template<class CharT> inline std::basic_string<CharT> &trim(std::basic_string<CharT> &s, const char *delims) { return ltrim(rtrim(s, delims), delims); }
+template<class CharT> inline std::basic_string<CharT> &trim(std::basic_string<CharT> &s, const CharT *delims) { return ltrim(rtrim(s, delims), delims); }
 
 namespace levenshtein {
 
