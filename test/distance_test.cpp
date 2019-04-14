@@ -14,7 +14,7 @@ TEST(distance, insert) {
 }
 
 TEST(distance, deleteSymbol) {
-    EXPECT_EQ(8, (distance<char, levenshtein::Distance>("Hold the door", "Hodor"))) << "Hodor, expected 7";
+    EXPECT_EQ(8, (distance<char, levenshtein::Distance>("Hold the door", "Hodor"))) << "Hodor, expected 8";
 
     EXPECT_EQ(2, (distance<char, levenshtein::Distance>("hello", "Hell"))) << "hello & Hell, expected 2";
     EXPECT_EQ(2, (distance<char, levenshtein::Distance>("Hell", "hello"))) << "Hell & hello, expected 2";
