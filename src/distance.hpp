@@ -1,39 +1,7 @@
 #pragma once 
 #include <string>
 #include <vector>
-
-//
-// вместо дополнительного заголовка, будет лежать пока что здесь.
-//
-namespace details {
-
-template<class CharT> int tolower(int c);
-template<> int tolower<char>(int c) { return std::tolower(c); }
-template<> int tolower<wchar_t>(int c) { return std::towlower(c); }
-
-}
-
-// преобразование строки к нижнему регистру
-template<class CharT> inline std::basic_string<CharT> to_lower(const std::basic_string<CharT> &str) {
-    auto ret = str;
-    std::transform(str.begin(), str.end(), ret.begin(), [] (CharT c) { return details::tolower<CharT>(c); });
-    return ret;
-}
-
-// trim from end of string (right)
-template<class CharT> inline std::basic_string<CharT> &rtrim(std::basic_string<CharT> &s, const CharT *delims) {
-    s.erase(s.find_last_not_of(delims) + 1);
-    return s;
-}
-
-// trim from beginning of string (left)
-template<class CharT> inline std::basic_string<CharT> &ltrim(std::basic_string<CharT> &s, const CharT *delims) {
-    s.erase(0, s.find_first_not_of(delims));
-    return s;
-}
-
-// trim from both ends of string (right then left)
-template<class CharT> inline std::basic_string<CharT> &trim(std::basic_string<CharT> &s, const CharT *delims) { return ltrim(rtrim(s, delims), delims); }
+#include "utils.hpp"
 
 namespace levenshtein {
 
@@ -68,7 +36,6 @@ struct Distance {
         }
         return d.back();
     }
-
 };
 
 } 
