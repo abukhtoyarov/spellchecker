@@ -1,11 +1,10 @@
 #pragma once 
 #include <string>
 #include <vector>
+
 //
 // вместо дополнительного заголовка, будет лежать пока что здесь.
 //
-
-
 namespace details {
 
 template<class CharT> int tolower(int c);

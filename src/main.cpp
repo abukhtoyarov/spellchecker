@@ -124,3 +124,23 @@ int main(int , char **) {
     }
     return 0;
 }
+
+// Load time: 36,64ms
+// Check time: 8,91574ms
+// Wrong but there are options: лун
+//     >> d:1 луну
+//     >> d:1 луне
+//     >> d:1 луны
+//     >> d:1 луна
+//     >> d:2 лет
+// Wrong but there are options: привлекапа
+//     >> d:1 привлекала
+// Correct: внимание
+// Correct: людей
+// Correct: с
+// Correct: древних
+// Wrong but there are options: врем
+//     >> d:1 время
+//     >> d:2 чем
+//     >> d:2 времён
+// Wrong: пирамида
