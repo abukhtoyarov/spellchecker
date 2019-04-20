@@ -96,7 +96,7 @@ int main(int , char **) {
     std::list<Result<wchar_t>> results;
     std::wcout << L"Check time: " << timer([&](){ results = sc.check(str); })  << L"ms" << std::endl;
    
-    for(const auto r: results) {
+    for(const auto &r: results) {
         switch(r.state_) {
         
         case State::correct: {
