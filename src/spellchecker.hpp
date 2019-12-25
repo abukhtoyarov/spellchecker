@@ -126,7 +126,7 @@ public:
 
                 // [TODO] Параметризировать количество выдаваемых результатов
                 // Первые 5 результатов будет достаточно
-                for(size_t i = 0; i < std::min(5, static_cast<int>(opts.size())); ++i, ++it) 
+                for(int i = 0; i < std::min(5, static_cast<int>(opts.size())); ++i, ++it) 
                     result.data_.emplace_back(it->first, it->second);
                 results.push_back(std::move(result));
             } else {

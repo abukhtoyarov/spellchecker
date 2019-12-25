@@ -3,11 +3,14 @@ cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
 set(APP_NAME spellchecker)
 set(SRC src/main.cpp)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 project(${APP_NAME})
 add_executable(${APP_NAME} ${SRC})
 target_compile_options(${APP_NAME} PUBLIC 
     $<$<COMPILE_LANGUAGE:CXX>:-std=c++17>
     $<$<COMPILE_LANGUAGE:CXX>:-Wall>
+    $<$<COMPILE_LANGUAGE:CXX>:-Werror>
     )
 
 enable_testing()
@@ -22,6 +25,7 @@ add_executable(runUnitTests
 target_compile_options(runUnitTests PUBLIC 
     $<$<COMPILE_LANGUAGE:CXX>:-std=c++17>
     $<$<COMPILE_LANGUAGE:CXX>:-Wall>
+    $<$<COMPILE_LANGUAGE:CXX>:-Werror>
     )
 
 target_include_directories(runUnitTests PUBLIC ${GTEST_INCLUDE_DIRS})
