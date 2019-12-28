@@ -12,7 +12,6 @@ env:
     - TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
 install:
   - sudo pip install conan
-  - conan user
 script:
     - mkdir build
     - cd build
