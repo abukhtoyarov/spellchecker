@@ -17,8 +17,6 @@ install:
 script:
     - mkdir build
     - cd build
-    - sudo -v
-    - conan install ..
     - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU
     - cmake --build .
     - ctest --output-on-failure
