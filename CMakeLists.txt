@@ -35,7 +35,7 @@ target_compile_options(runUnitTests PUBLIC
     $<$<COMPILE_LANGUAGE:CXX>:-Werror>
     )
 
-target_link_libraries(runUnitTests gtest gtest_main)
+target_link_libraries(runUnitTests CONAN_PKG::gtest)
 
 include(GoogleTest)
 enable_testing()
