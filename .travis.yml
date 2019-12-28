@@ -12,6 +12,7 @@ env:
     - TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
 install:
   - sudo pip install conan
+  - sudo pip install --upgrade "urllib3==1.22" awscli
 script:
     - mkdir build
     - cd build
