@@ -41,4 +41,5 @@ target_compile_options(runUnitTests PUBLIC
     $<$<COMPILE_LANGUAGE:CXX>:-Werror>
     )
 target_link_libraries(runUnitTests gtest gtest_main)
+gtest_add_tests(TARGET runUnitTests TEST_LIST allTests)
 gtest_discover_tests(runUnitTests)
