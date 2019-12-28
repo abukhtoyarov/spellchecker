@@ -9,8 +9,8 @@ compiler:
     - gcc
     - clang
 env:
-    - TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
-    - TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
+    - BUILD_CONFIGURATION=Debug
+    - BUILD_CONFIGURATION=Release
 install:
     - pip install conan
     - conan user
