@@ -13,7 +13,7 @@ if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
                   "${CMAKE_BINARY_DIR}/conan.cmake")
 endif()
 include(${CMAKE_BINARY_DIR}/conan.cmake)
-conan_cmake_run(CONANFILE conanfile.txt  # or relative build/conanfile.txt
+conan_cmake_run(CONANFILE conanfile.txt
                 BASIC_SETUP CMAKE_TARGETS
                 BUILD missing)
 
@@ -39,6 +39,5 @@ target_link_libraries(runUnitTests CONAN_PKG::gtest)
 
 include(GoogleTest)
 enable_testing()
-
 gtest_add_tests(TARGET runUnitTests TEST_LIST allTests)
 gtest_discover_tests(runUnitTests)
